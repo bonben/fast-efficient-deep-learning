@@ -1,5 +1,7 @@
 # Fast track: Efficient Deep Learning
 
+First, join the discord server for this fast track: https://discord.gg/KF5CEhx8
+
 ## 1. Train a ResNet-18 model on CIFAR-10 dataset.
 
 Install necessary libraries:
@@ -15,6 +17,8 @@ export PATH=$PATH:/net/npers/YOUR_USERNAME/.local/bin
 wandb login
 ```
 Your API key can be found in your W&B account settings.
+
+Once it's done, communicate your email to the professor to join the class team.
 
 Your PATH variable should include the path to your local bin directory. You can add it to your `~/.bashrc` file:
 ```bash
@@ -38,18 +42,13 @@ We will see again with a new presentation, and will complete with a quizz destin
 
 Join the wooclap for this course: https://app.wooclap.com/join/EDLENSEIRB
 
-## 3. Modifying the ResNet-18 model
+## 3. Create a ResNet-12 model
 
-You will modify the files (`resnet.py`, `main.py`) to implement a new ResNet-12 model.
-The ResNet-12 model should have the following architecture:
-
-<-- will complete later -->
-
+Your task is modify the files (`resnet.py`, `main.py`) to implement a new ResNet-12 model.
 The reference implementation is readable as an onnx file: `resnet12-ref.onnx`.
+You can visualize the onnx files using Netron: https://netron.app
 
 The provided `main.py` also export the trained model as an onnx file: `trained-model.onnx`.
-
-You can visualize the onnx files using Netron: https://netron.app
 
 You should aim to have the same architecture in the exported onnx (`trained-model.onnx`) as in the reference onnx (`resnet12-ref.onnx`).
 
@@ -63,6 +62,20 @@ In the `main.py`, Mixup is already implemented.
 You will implement Cutmix as an additional data augmentation technique.
 Add it using the `v2.CutMix` class from the `torch-vision-extensions` library.
 Visualize the input images after applying Cutmix to verify your implementation and compare the results with Mixup.
+
+## EXP
+
+The goal of the class (as a team) is to find the best tradeoff #params vs accuracy on CIFAR-10 dataset.
+You will launch experiments during the night. Organize yourselves to explore different hyperparameters (learning rate, batch size, weight decay, model depth/width, data augmentation techniques, etc.). And monitor with Weights & Biases.
+
+The whole class receives **one unique grade**, determined by the **best model** on the leaderboard.
+
+* **Condition:** Accuracy > 90% (otherwise **0/20**).
+* **Score:** Linear interpolation based on model size.
+    * ~11.2M params (Standard ResNet-18) = **10/20**
+    * ≤ 100k params = **20/20**
+
+**Organize yourselves** to find the best model.
 
 ## 6. Course 3: Pruning
 The document `efficient-deep-learning/course3.pdf` contains the materials for the third course on Pruning.

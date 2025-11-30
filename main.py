@@ -29,7 +29,7 @@ def conf_collate_fn(mixup):
         return default_collate
 
 def main(args):
-    run = wandb.init(project="explore", config=args)
+    run = wandb.init(project="cifar10-challenge", entity="enseirb-see", config=args)
     lr = wandb.config['learning_rate']
     epochs = wandb.config['epochs']
     batch_size = wandb.config['batch_size']
@@ -65,14 +65,18 @@ def main(args):
     else:
         raise ValueError('Invalid depth')
 
+
     # export as onnx
+    model.eval()
     dummy_input = torch.randn(1, 3, 32, 32)
     torch.onnx.export(model, dummy_input, "trained-model.onnx")
+    model.train()
 
     # Load, simplify, and save
     model_onnx = onnx.load("trained-model.onnx")
     model_onnx, check = simplify(model_onnx)
     onnx.save(model_onnx, "trained-model.onnx")
+
 
     epochs = 150
 
