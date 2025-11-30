@@ -1,0 +1,3 @@
+[submodule "efficient-deep-learning"]
+	path = efficient-deep-learning
+	url = git@github.com:brain-bzh/efficient-deep-learning.git
