@@ -147,9 +147,9 @@ if __name__ == "__main__":
 
     parser.add_argument("-b", "--batch_size", type=int, default=32, help="Batch size")
     parser.add_argument("-e", "--epochs", type=int, default=150, help="Number of training epochs")
-    parser.add_argument("-lr", "--learning_rate", type=int, default=0.1, help="Learning rate")
-    parser.add_argument("-m", "--momentum", type=int, default=0.9, help="Momentum")
-    parser.add_argument("-wd", "--weight_decay", type=int, default=5e-4, help="Weight decay")
+    parser.add_argument("-lr", "--learning_rate", type=float, default=0.1, help="Learning rate")
+    parser.add_argument("-m", "--momentum", type=float, default=0.9, help="Momentum")
+    parser.add_argument("-wd", "--weight_decay", type=float, default=5e-4, help="Weight decay")
     parser.add_argument("--mixup", action="store_true", help="Use MixUp data augmentation")
     parser.add_argument("--depth", type=int, default=18, help="ResNet depth")
     parser.add_argument("--width", type=int, default=64, help="ResNet width")
