@@ -13,7 +13,7 @@ Create a Weights & Biases account to track your experiments.
 Go to https://wandb.ai/site and sign up.
 Then login via terminal:
 ```bash
-export PATH=$PATH:/net/npers/YOUR_USERNAME/.local/bin
+export PATH=$PATH:/net/netud/s/YOUR_USERNAME/.local/bin
 wandb login
 ```
 Your API key can be found in your W&B account settings.
@@ -22,7 +22,7 @@ Once it's done, communicate your email to the professor to join the class team.
 
 Your PATH variable should include the path to your local bin directory. You can add it to your `~/.bashrc` file:
 ```bash
-export PATH=$PATH:/net/npers/YOUR_USERNAME/.local/bin
+export PATH=$PATH:/net/netud/s/YOUR_USERNAME/.local/bin
 ```
 
 Launch the training script:
